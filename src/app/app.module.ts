@@ -6,6 +6,8 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarProfileComponent } from './sidebar-profile/sidebar-profile.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarButtonComponent } from './sidebar-button/sidebar-button.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
     AppHeaderComponent,
     SidebarComponent,
     SidebarProfileComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    SidebarButtonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

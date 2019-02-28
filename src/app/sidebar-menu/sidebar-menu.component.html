@@ -1,3 +1,5 @@
 <ul>
-  
+    <li *ngFor="let op of options">
+        <app-sidebar-button [option]=op.name></app-sidebar-button>
+    </li>
 </ul>

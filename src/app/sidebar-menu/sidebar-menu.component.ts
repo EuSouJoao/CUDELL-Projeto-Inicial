@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OPTIONS } from '../menu-options';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarMenuComponent implements OnInit {
 
+  options = OPTIONS;
+  
   constructor() { }
 
   ngOnInit() {
