@@ -1,0 +1,32 @@
+img {
+    width: 56px;
+}
+
+.image {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 56px;
+}
+
+.info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    color: white;
+    margin-left: 5px;
+}
+
+.text-name {
+    font-family: Roboto;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.text-rank {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 10px;
+}
