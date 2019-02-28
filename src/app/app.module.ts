@@ -8,6 +8,7 @@ import { SidebarProfileComponent } from './sidebar-profile/sidebar-profile.compo
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarButtonComponent } from './sidebar-button/sidebar-button.component';
+import { TablesContainerComponent } from './tables-container/tables-container.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarButtonComponent } from './sidebar-button/sidebar-button.componen
     SidebarComponent,
     SidebarProfileComponent,
     SidebarMenuComponent,
-    SidebarButtonComponent
+    SidebarButtonComponent,
+    TablesContainerComponent
   ],
   imports: [
     BrowserModule,
