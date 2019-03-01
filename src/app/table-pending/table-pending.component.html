@@ -8,10 +8,16 @@
   
   <tbody>
      <tr class="titles">
-        <td>Fornecedor</td>
-        <td>Data Fatura</td>
-        <td>Data Vencimento</td>
-        <td>Valor</td>
+        <td class="padded">Fornecedor</td>
+        <td class="center">Data Fatura</td>
+        <td class="center">Data Vencimento</td>
+        <td class="center">Valor</td>
+     </tr>
+     <tr *ngFor= "let fatura of faturas" class= "line">
+      <td class="padded">{{ fatura.fornecedor }}</td>
+      <td class="center">{{ fatura.dataFatura }}</td>
+      <td class="center">{{ fatura.dataVencimento }}</td>
+      <td class="center">{{ fatura.valor }}$</td>
      </tr>
   </tbody>
 </table>

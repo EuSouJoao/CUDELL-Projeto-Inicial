@@ -6,10 +6,16 @@
 
 table {
     border-collapse: collapse;
+    border-bottom: 1px solid #95a5a6;
 }
 
 table, tr, td {
-    border: 1px solid #95a5a6
+    border-left: 1px solid #95a5a6;
+    border-right: 1px solid #95a5a6;
+    font-weight: 300;
+}
+.line:nth-child(odd) {
+    background: #f1f2f7
 }
 
 .head {
@@ -26,4 +32,18 @@ table, tr, td {
 .titles {
     height: 30px;
     background-color: #d0d5d8;
+    font-size: 12px;
+}
+
+.line {
+    font-size: 12px;
+    height: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.padded {
+    padding-left: 18px;
 }
