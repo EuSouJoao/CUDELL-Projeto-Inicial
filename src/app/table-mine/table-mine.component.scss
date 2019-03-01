@@ -1,0 +1,55 @@
+.border {
+    padding-top: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+table {
+    border-collapse: collapse;
+    border-bottom: 1px solid #95a5a6;
+}
+
+table, tr, td {
+    border-left: 1px solid #95a5a6;
+    border-right: 1px solid #95a5a6;
+    font-weight: 300;
+}
+.line:nth-child(odd) {
+    background: #f1f2f7
+}
+
+.head {
+    background-color: #282A33;
+    line-height: 40px;
+    font-weight: 300;
+    color: white;
+}
+
+.headtext {
+    padding-left: 18px;
+}
+
+.titles {
+    height: 30px;
+    background-color: #d0d5d8;
+    font-size: 12px;
+}
+
+.line {
+    font-size: 12px;
+    height: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.padded {
+    padding-left: 18px;
+}
+
+.state {
+    text-align: center;
+    color: #2ba386;
+    font-weight: bold;
+}

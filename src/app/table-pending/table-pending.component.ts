@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Fatura } from '../fatura';
-import { log } from 'util';
 
 @Component({
   selector: 'app-table-pending',

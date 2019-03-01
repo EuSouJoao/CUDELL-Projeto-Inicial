@@ -14,4 +14,8 @@ export class ApiService {
   public getPendingFaturas(){
     return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturaspendentes`);
   }
+
+  public getMyFaturas(){
+    return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturas`);
+  }
 }

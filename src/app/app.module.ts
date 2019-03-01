@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarButtonComponent } from './sidebar-button/sidebar-button.component';
 import { TablesContainerComponent } from './tables-container/tables-container.component';
 import { TablePendingComponent } from './table-pending/table-pending.component';
+import { TableMineComponent } from './table-mine/table-mine.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TablePendingComponent } from './table-pending/table-pending.component';
     SidebarMenuComponent,
     SidebarButtonComponent,
     TablesContainerComponent,
-    TablePendingComponent
+    TablePendingComponent,
+    TableMineComponent
   ],
   imports: [
     BrowserModule,
