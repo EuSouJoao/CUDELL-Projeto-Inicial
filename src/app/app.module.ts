@@ -9,6 +9,7 @@ import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarButtonComponent } from './sidebar-button/sidebar-button.component';
 import { TablesContainerComponent } from './tables-container/tables-container.component';
+import { TablePendingComponent } from './table-pending/table-pending.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TablesContainerComponent } from './tables-container/tables-container.co
     SidebarProfileComponent,
     SidebarMenuComponent,
     SidebarButtonComponent,
-    TablesContainerComponent
+    TablesContainerComponent,
+    TablePendingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+.border {
+    padding-top: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, tr, td {
+    border: 1px solid #95a5a6
+}
+
+.head {
+    background-color: #282A33;
+    line-height: 40px;
+    font-weight: 300;
+    color: white;
+}
+
+.headtext {
+    padding-left: 18px;
+}
+
+.titles {
+    height: 30px;
+    background-color: #d0d5d8;
+}
