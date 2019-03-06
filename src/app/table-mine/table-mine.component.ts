@@ -13,8 +13,35 @@ export class TableMineComponent implements OnInit {
 
   faturas: Fatura[];
 
+  page: number;
+
+  faturasBackground: Fatura[];
+
   ngOnInit() {
-    this.apiService.getMyFaturas().subscribe((res) => {this.faturas = res});
+    this.page = 1;
+    this.apiService.getMyFaturas(this.page).subscribe((res) => {this.faturas = res});
+  }
+
+  nextPage(event) {
+    this.apiService.getMyFaturas(this.page + 1).subscribe((res) => {
+    this.faturasBackground = res
+      if (this.faturasBackground.length !== 0) {
+        this.faturas = this.faturasBackground;
+        this.page++;
+      }
+    });
+  }
+
+  prevPage(event) {
+    if (this.page != 1) {
+      this.apiService.getMyFaturas(this.page - 1).subscribe((res) => {
+      this.faturasBackground = res
+        if (this.faturasBackground.length !== 0) {
+          this.faturas = this.faturasBackground;
+          this.page--;
+        }
+      });
+    }
   }
 
 }

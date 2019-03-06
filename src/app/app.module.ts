@@ -13,6 +13,8 @@ import { TablesContainerComponent } from './tables-container/tables-container.co
 import { TablePendingComponent } from './table-pending/table-pending.component';
 import { TableMineComponent } from './table-mine/table-mine.component';
 
+import {MatButtonModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { TableMineComponent } from './table-mine/table-mine.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatButtonModule,
     HttpClientModule
   ],
   providers: [],

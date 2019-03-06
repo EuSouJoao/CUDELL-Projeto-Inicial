@@ -11,11 +11,11 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getPendingFaturas(){
-    return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturaspendentes`);
+  public getPendingFaturas(page){
+    return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturaspendentes/${page}`, {withCredentials:true});
   }
 
-  public getMyFaturas(){
-    return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturas`);
+  public getMyFaturas(page){
+    return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturas/${page}`, {withCredentials:true});
   }
 }

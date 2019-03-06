@@ -22,3 +22,8 @@
   </tbody>
 </table>
 </div>
+<div class="paging">
+   <button mat-stroked-button (click)="prevPage($event)">Anterior</button>
+   <span class="page-text">Página: {{ page }}</span>
+   <button mat-stroked-button (click)="nextPage($event)">Seguinte</button>  
+</div>

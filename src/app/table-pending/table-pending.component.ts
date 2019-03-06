@@ -12,12 +12,38 @@ export class TablePendingComponent implements OnInit {
 
   url = 'http://localhost:2900/api/faturaspendentes';
 
-  constructor(private apiService : ApiService) { }
+  page: number;
+
+  constructor(private apiService: ApiService) { }
 
   faturas: Fatura[];
 
+  faturasBackground: Fatura[];
+
   ngOnInit() {
-    this.apiService.getPendingFaturas().subscribe((res) => {this.faturas = res});
+    this.page = 1;
+    this.apiService.getPendingFaturas(this.page).subscribe((res) => { this.faturas = res });
   }
 
+  nextPage(event) {
+    this.apiService.getPendingFaturas(this.page + 1).subscribe((res) => {
+    this.faturasBackground = res
+      if (this.faturasBackground.length !== 0) {
+        this.faturas = this.faturasBackground;
+        this.page++;
+      }
+    });
+  }
+
+  prevPage(event) {
+    if (this.page != 1) {
+      this.apiService.getPendingFaturas(this.page - 1).subscribe((res) => {
+      this.faturasBackground = res
+        if (this.faturasBackground.length !== 0) {
+          this.faturas = this.faturasBackground;
+          this.page--;
+        }
+      });
+    }
+  }
 }
