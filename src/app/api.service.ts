@@ -18,4 +18,8 @@ export class ApiService {
   public getMyFaturas(page){
     return this.httpClient.get<Fatura[]>(`${this.apiURL}/faturas/${page}`, {withCredentials:true});
   }
+
+  public getUsername(){
+    return this.httpClient.get<string>(`${this.apiURL}/user`, {withCredentials:true});
+  }
 }
