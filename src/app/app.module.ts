@@ -13,7 +13,10 @@ import { TablesContainerComponent } from './tables-container/tables-container.co
 import { TablePendingComponent } from './table-pending/table-pending.component';
 import { TableMineComponent } from './table-mine/table-mine.component';
 
-import {MatButtonModule} from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule, MatSort } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import {MatButtonModule} from '@angular/material';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
     HttpClientModule
   ],
   providers: [],

@@ -9,7 +9,20 @@ export class AppHeaderComponent implements OnInit {
 
   constructor() { }
 
+  searchClicked: boolean;
+  mailClicked: boolean;
+
   ngOnInit() {
+    this.searchClicked = false;
+    this.mailClicked = false;
+  }
+
+  clickSearch() {
+    this.searchClicked = !this.searchClicked;
+  }
+
+  clickMail() {
+    this.mailClicked = !this.mailClicked;
   }
 
 }

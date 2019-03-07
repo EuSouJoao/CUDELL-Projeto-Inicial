@@ -37,5 +37,24 @@ li:first-child {
     justify-content: center;
 }
 
+.search-clicked {
+    height: 76px;
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+    width: 76px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    height: 76px;
+    width: 244px;
+    float: right;
+    border-left: 1pt solid #CCCCCC;
+    padding: 5px;
+}
+
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Sort} from '@angular/material';
 import { ApiService } from '../api.service';
 import { Fatura } from '../fatura';
 
@@ -46,4 +47,27 @@ export class TablePendingComponent implements OnInit {
       });
     }
   }
+
+  sortData(sort: Sort) {
+    const data = this.faturas.slice();
+
+    this.faturas = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'fornecedor': return compare(a.fornecedor, b.fornecedor, isAsc);
+        case 'dataFatura': return compareDate(a.dataFatura, b.dataFatura, isAsc);
+        case 'dataVencimento': return compareDate(a.dataVencimento, b.dataVencimento, isAsc);
+        case 'valor': return compare(a.valor, b.valor, isAsc);
+        default: return 0;
+      }
+    });
+  }
 }
+  
+  function compare(a: number | string, b: number | string, isAsc: boolean) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }
+  
+  function compareDate(a: Date, b: Date, isAsc: boolean) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }

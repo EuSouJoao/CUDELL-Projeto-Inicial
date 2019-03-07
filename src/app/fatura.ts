@@ -1,7 +1,7 @@
 export class Fatura {
     faturaId: string;
-    dataFatura: string;
-    dataVencimento: string;
+    dataFatura: Date;
+    dataVencimento: Date;
     valor: string;
     estado: string;
     fornecedor: string;

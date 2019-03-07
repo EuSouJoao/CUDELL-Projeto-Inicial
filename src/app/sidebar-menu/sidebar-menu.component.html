@@ -1,5 +1,14 @@
 <ul>
-    <li *ngFor="let op of options">
-        <app-sidebar-button [option]=op.name></app-sidebar-button>
+    <li>
+        <app-sidebar-button [option]=options[0].name></app-sidebar-button>
+    </li>
+    <li>
+        <app-sidebar-button [option]=options[1].name></app-sidebar-button>
+    </li>
+    <li>
+        <app-sidebar-button [option]=options[2].name></app-sidebar-button>
+    </li>
+    <li>
+        <app-sidebar-button [option]=options[3].name></app-sidebar-button>
     </li>
 </ul>

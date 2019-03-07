@@ -3,11 +3,20 @@
       <li class="container-logo">
               <img class="logo" src="assets/logo.png" />
       </li>
-      <li class="list-right-items">
+      <li class="list-right-items" (click)="clickMail()" *ngIf="!mailClicked">
         <img src="assets/mail.png">
       </li>
-      <li class="list-right-items">
-          <img src="assets/search.png">
+      <li class="list-right-items" (click)="clickMail()" *ngIf="mailClicked">
+        <img src="assets/mail_sel.png">
       </li>
+      <li class="list-right-items" (click)="clickSearch()" *ngIf="!searchClicked">  
+        <img src="assets/search.png">
+      </li>
+      <li class="search-clicked" (click)="clickSearch()" *ngIf="searchClicked">  
+        <img src="assets/search_sel.png">
+      </li>
+      <mat-form-field class="search-bar" *ngIf="searchClicked">
+        <input matInput placeholder="Procurar ...">
+      </mat-form-field>
   </ul>
 </div>

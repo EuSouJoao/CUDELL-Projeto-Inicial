@@ -1,5 +1,5 @@
 <div class = "border">
-  <table width = "100%">
+  <table width = "100%" matSort (matSortChange)="sortData($event)">
     <thead class="head">
        <tr>
           <td class="headtext" colspan = "5">Minhas Faturas</td>
@@ -8,16 +8,16 @@
     
     <tbody>
        <tr class="titles">
-          <td class="padded">Fornecedor</td>
-          <td class="center">Data Fatura</td>
-          <td class="center">Data Vencimento</td>
-          <td class="center">Valor</td>
-          <td class="center">Estado</td>
+          <td mat-sort-header="fornecedor">Fornecedor</td>
+          <td mat-sort-header="dataFatura" class="center">Data Fatura</td>
+          <td mat-sort-header="dataVencimento" class="center">Data Vencimento</td>
+          <td mat-sort-header="valor" class="center">Valor</td>
+          <td mat-sort-header="estado" class="center">Estado</td>
        </tr>
        <tr *ngFor= "let fatura of faturas" class= "line">
         <td class="padded">{{ fatura.fornecedor }}</td>
-        <td class="center">{{ fatura.dataFatura }}</td>
-        <td class="center">{{ fatura.dataVencimento }}</td>
+        <td class="center">{{ fatura.dataFatura | date:'dd-MM-yyyy' }}</td>
+        <td class="center">{{ fatura.dataVencimento | date:'dd-MM-yyyy' }}</td>
         <td class="center">{{ fatura.valor }}$</td>
         <td class="state">{{ fatura.estado }}</td>
        </tr>
