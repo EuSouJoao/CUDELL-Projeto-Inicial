@@ -5,14 +5,15 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './sidebar-button.component.html',
   styleUrls: ['./sidebar-button.component.scss']
 })
+
 export class SidebarButtonComponent implements OnInit {
 
   @Input()
   option: string;
   
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
   }
-
 }

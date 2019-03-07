@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material';
+import { SidebarButtonSelectedComponent } from './sidebar-button-selected/sidebar-button-selected.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatButtonModule } from '@angular/material';
     SidebarButtonComponent,
     TablesContainerComponent,
     TablePendingComponent,
-    TableMineComponent
+    TableMineComponent,
+    SidebarButtonSelectedComponent
   ],
   imports: [
     BrowserModule,

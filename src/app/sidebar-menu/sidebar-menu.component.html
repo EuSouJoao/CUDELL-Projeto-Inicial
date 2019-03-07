@@ -1,14 +1,26 @@
 <ul>
-    <li>
-        <app-sidebar-button [option]=options[0].name></app-sidebar-button>
+    <li (click)="selectZero()" *ngIf="!selectedZero">
+        <app-sidebar-button  [option]=options[0].name></app-sidebar-button>
     </li>
-    <li>
+    <li (click)="selectZero()" *ngIf="selectedZero">
+        <app-sidebar-button-selected [option]=options[0].name></app-sidebar-button-selected>
+    </li>
+    <li (click)="selectOne()" *ngIf="!selectedOne">
         <app-sidebar-button [option]=options[1].name></app-sidebar-button>
     </li>
-    <li>
+    <li (click)="selectOne()" *ngIf="selectedOne">
+        <app-sidebar-button-selected [option]=options[1].name></app-sidebar-button-selected>
+    </li>
+    <li (click)="selectTwo()" *ngIf="!selectedTwo">
         <app-sidebar-button [option]=options[2].name></app-sidebar-button>
     </li>
-    <li>
+    <li (click)="selectTwo()" *ngIf="selectedTwo">
+        <app-sidebar-button-selected [option]=options[2].name></app-sidebar-button-selected>
+    </li>
+    <li (click)="selectThree()" *ngIf="!selectedThree">
         <app-sidebar-button [option]=options[3].name></app-sidebar-button>
+    </li>
+    <li (click)="selectThree()" *ngIf="selectedThree">
+        <app-sidebar-button-selected [option]=options[3].name></app-sidebar-button-selected>
     </li>
 </ul>

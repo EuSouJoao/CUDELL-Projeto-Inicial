@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    //this.selected = !selected;
+   }
 
   ngOnInit() {
   }
