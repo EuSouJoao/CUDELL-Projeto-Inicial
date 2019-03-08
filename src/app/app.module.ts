@@ -18,6 +18,7 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material';
 import { SidebarButtonSelectedComponent } from './sidebar-button-selected/sidebar-button-selected.component';
+import { ConstructionComponent } from './construction/construction.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SidebarButtonSelectedComponent } from './sidebar-button-selected/sideba
     TablesContainerComponent,
     TablePendingComponent,
     TableMineComponent,
-    SidebarButtonSelectedComponent
+    SidebarButtonSelectedComponent,
+    ConstructionComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,17 @@ import { SelectionService } from '../selection.service'
 export class SidebarMenuComponent implements OnInit {
 
   options = OPTIONS;
+
+  selection: string;
   
   selectedZero: boolean;
   selectedTwo: boolean;
   selectedThree: boolean;
   selectedOne : boolean;
   
-  constructor(SelectionService : SelectionService) { 
+  constructor(private selectionService : SelectionService) { 
+    
+    
     this.selectedZero = false;
     this.selectedOne = false;
     this.selectedTwo = false;
@@ -24,19 +28,30 @@ export class SidebarMenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.selectionService.currentSelection.subscribe(selection => this.selection);
   }
 
   selectZero(){
     this.selectedZero = !this.selectedZero;
+    if (!this.selectedZero) {
+      this.selectionService.changeSelection("none");
+    } else {
+      this.selectionService.changeSelection(this.options[0].name);
+    }
     this.selectedOne = false;
-    //selected = this.selectedOne;
     this.selectedTwo = false;
     this.selectedThree = false;
   }
 
   selectOne(){
     this.selectedOne = !this.selectedOne;
-    //selected = this.selectedOne;
+    
+    if (!this.selectedOne) {
+      this.selectionService.changeSelection("none");
+    } else {
+      this.selectionService.changeSelection(this.options[1].name);
+    }
+
     this.selectedZero = false;
     this.selectedTwo = false;
     this.selectedThree = false;
@@ -44,18 +59,30 @@ export class SidebarMenuComponent implements OnInit {
 
   selectTwo(){
     this.selectedTwo = !this.selectedTwo;
+
+    if (!this.selectedTwo) {
+      this.selectionService.changeSelection("none");
+    } else {
+      this.selectionService.changeSelection(this.options[2].name);
+    }
+
     this.selectedZero = false;
     this.selectedOne = false;
-    //selected = this.selectedOne;
     this.selectedThree = false;
 
   }
 
   selectThree(){
     this.selectedThree = !this.selectedThree;
+
+    if (!this.selectedThree) {
+      this.selectionService.changeSelection("none");
+    } else {
+      this.selectionService.changeSelection(this.options[3].name);
+    }
+    
     this.selectedZero = false;
     this.selectedOne = false;
-    //selected = this.selectedOne;
     this.selectedTwo = false;
   }
 

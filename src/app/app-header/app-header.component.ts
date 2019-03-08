@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-app-header',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private searchService : SearchService) { }
 
+  search: string;
+  
   searchClicked: boolean;
   mailClicked: boolean;
 
@@ -23,6 +26,10 @@ export class AppHeaderComponent implements OnInit {
 
   clickMail() {
     this.mailClicked = !this.mailClicked;
+  }
+
+  changeSearch(input: string){
+    this.searchService.changeSearch(input);
   }
 
 }

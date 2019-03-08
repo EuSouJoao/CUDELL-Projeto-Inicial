@@ -14,6 +14,8 @@ export class TablePendingComponent implements OnInit {
   url = 'http://localhost:2900/api/faturaspendentes';
 
   page: number;
+  criteria: string;
+  order: string;
 
   constructor(private apiService: ApiService) { }
 
@@ -27,47 +29,106 @@ export class TablePendingComponent implements OnInit {
   }
 
   nextPage(event) {
-    this.apiService.getPendingFaturas(this.page + 1).subscribe((res) => {
-    this.faturasBackground = res
-      if (this.faturasBackground.length !== 0) {
-        this.faturas = this.faturasBackground;
-        this.page++;
-      }
-    });
-  }
-
-  prevPage(event) {
-    if (this.page != 1) {
-      this.apiService.getPendingFaturas(this.page - 1).subscribe((res) => {
+    if (this.criteria === undefined) {
+      this.apiService.getPendingFaturas(this.page + 1).subscribe((res) => {
       this.faturasBackground = res
         if (this.faturasBackground.length !== 0) {
           this.faturas = this.faturasBackground;
-          this.page--;
+          this.page++;
         }
       });
+   } else {
+    this.apiService.getPendingFaturasCriteria(this.page + 1, this.criteria, this.order).subscribe((res) => {
+      this.faturasBackground = res
+        if (this.faturasBackground.length !== 0) {
+          this.faturas = this.faturasBackground;
+          this.page++;
+        }
+      });
+   }
+  }
+
+  prevPage(event) {
+    if (this.criteria === undefined) {
+      if (this.page != 1) {
+        this.apiService.getPendingFaturas(this.page - 1).subscribe((res) => {
+        this.faturasBackground = res
+          if (this.faturasBackground.length !== 0) {
+            this.faturas = this.faturasBackground;
+            this.page--;
+          }
+        });
+      }
+    } else {
+      if (this.page != 1) {
+        this.apiService.getPendingFaturasCriteria(this.page - 1, this.criteria, this.order).subscribe((res) => {
+        this.faturasBackground = res
+          if (this.faturasBackground.length !== 0) {
+            this.faturas = this.faturasBackground;
+            this.page--;
+          }
+        });
+      }
     }
   }
 
   sortData(sort: Sort) {
-    const data = this.faturas.slice();
 
-    this.faturas = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'fornecedor': return compare(a.fornecedor, b.fornecedor, isAsc);
-        case 'dataFatura': return compareDate(a.dataFatura, b.dataFatura, isAsc);
-        case 'dataVencimento': return compareDate(a.dataVencimento, b.dataVencimento, isAsc);
-        case 'valor': return compare(a.valor, b.valor, isAsc);
-        default: return 0;
+    const isAsc = sort.direction === 'asc';
+    switch (sort.active) {
+      case 'fornecedor':
+      this.page = 1;
+      if (isAsc) {
+        this.apiService.getPendingFaturasCriteria(this.page, "fornecedor", "asc").subscribe((res) => { this.faturas = res});
+        this.criteria = "fornecedor";
+        this.order = "asc";
+      } else {
+        this.apiService.getPendingFaturasCriteria(this.page, "fornecedor", "desc").subscribe((res) => { this.faturas = res});
+        this.criteria = "fornecedor";
+        this.order = "desc";
       }
-    });
+      break;
+      
+      case 'dataFatura': 
+      this.page = 1; 
+      if (isAsc) {
+        this.apiService.getPendingFaturasCriteria(this.page, "datafatura", "asc").subscribe((res) => { this.faturas = res});
+        this.criteria = "datafatura";
+        this.order = "asc";
+      } else {
+        this.apiService.getPendingFaturasCriteria(this.page, "datafatura", "desc").subscribe((res) => { this.faturas = res});
+        this.criteria = "datafatura";
+        this.order = "desc";
+      }
+      break;
+
+      case 'dataVencimento': 
+      this.page = 1; 
+      if (isAsc) {
+        this.apiService.getPendingFaturasCriteria(this.page, "datavencimento", "asc").subscribe((res) => { this.faturas = res});
+        this.criteria = "datavencimento";
+        this.order = "asc";
+      } else {
+        this.apiService.getPendingFaturasCriteria(this.page, "datavencimento", "desc").subscribe((res) => { this.faturas = res});
+        this.criteria = "datavencimento";
+        this.order = "desc";
+      }
+      break;
+
+      case 'valor':
+      this.page = 1; 
+      if (isAsc) {
+        this.apiService.getPendingFaturasCriteria(this.page, "valor", "asc").subscribe((res) => { this.faturas = res});
+        this.criteria = "valor";
+        this.order = "asc";
+      } else {
+        this.apiService.getPendingFaturasCriteria(this.page, "valor", "desc").subscribe((res) => { this.faturas = res});
+        this.criteria = "valor";
+        this.order = "desc";
+      }
+      break;
+
+      default: return 0;
+    }
   }
 }
-  
-  function compare(a: number | string, b: number | string, isAsc: boolean) {
-    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-  }
-  
-  function compareDate(a: Date, b: Date, isAsc: boolean) {
-    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-  }

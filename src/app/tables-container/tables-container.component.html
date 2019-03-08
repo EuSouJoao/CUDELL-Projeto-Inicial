@@ -1,4 +1,5 @@
 <div class="frame">
-  <app-table-pending></app-table-pending>
-  <app-table-mine></app-table-mine>
+  <app-table-pending *ngIf="selection==='Engª e Serviços'"></app-table-pending>
+  <app-table-mine *ngIf="selection==='Engª e Serviços'"></app-table-mine>
+  <app-construction *ngIf="selection!=='Engª e Serviços'"></app-construction>
 </div>

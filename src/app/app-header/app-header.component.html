@@ -16,7 +16,7 @@
         <img src="assets/search_sel.png">
       </li>
       <mat-form-field class="search-bar" *ngIf="searchClicked">
-        <input matInput placeholder="Procurar ...">
+        <input #inputSearch (keyup.enter) = "changeSearch(inputSearch.value)" matInput placeholder="Procurar ...">
       </mat-form-field>
   </ul>
 </div>

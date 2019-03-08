@@ -1,0 +1,34 @@
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.welcome-text {
+    font-size: 20pt;
+    font-weight: 700;
+    padding-right: 10px;
+    color: #2BA386;
+}
+
+.incompetent-text {
+    padding-top: 7%;
+    font-size: 15pt;
+    font-weight: 700;
+    color: #2BA386;
+}
+
+.try-text {
+    font-size: 15pt;
+    font-weight: 700;
+    color: black;
+}
+
+.italics {
+    padding-top: 15%;
+    font-family: cursive;
+    color: hotpink;
+}

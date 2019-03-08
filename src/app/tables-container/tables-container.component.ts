@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectionService } from '../selection.service';
 
 @Component({
   selector: 'app-tables-container',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesContainerComponent implements OnInit {
 
-  constructor() {
-    //this.selected = !selected;
+  selection: string;
+  
+  constructor(private selectionService : SelectionService) {
+    
    }
 
   ngOnInit() {
+    this.selectionService.currentSelection.subscribe(selection => this.selection = selection);
   }
 
 }
